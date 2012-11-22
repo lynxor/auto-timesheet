@@ -1,7 +1,6 @@
 var jsdom = require("jsdom"),
     fs = require('fs'),
     moment = require('moment'),
-    request = require('request'),
     async = require("async"),
     jqueryString = fs.readFileSync("./vendor/jquery.js").toString(),
     _ = require("underscore"),
