@@ -77,7 +77,7 @@ function safeAddEntry(entry, callback) {
 function addEntry(entry, callback) {
         console.log("Adding entry - " + JSON.stringify(entry));
         browser.fill('EntryDate_TextBox', entry.date.format('DD-MMM-YYYY'))
-            .select('Project_DropDown', '149')//Invest Web
+            .select('Project_DropDown', '149')
             .fill('Duration_TextBox', entry.hours)
             .check('isBillable_CheckBox')
             .fill('Description_textBox', entry.description);
