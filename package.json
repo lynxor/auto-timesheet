@@ -1,0 +1,27 @@
+{
+    "name":"auto-timesheet",
+    "version":"0.0.1",
+    "description":"Auto Timesheet project",
+    "dependencies":{
+        "underscore":"1.3.3",
+        "mongodb":"*",
+        "mongojs":"*",
+        "emailjs":"0.2.2",
+        "request":"2.9.100",
+        "csv":"*",
+        "moment":"1.4.0",
+        "async":"*",
+	"winston":"*",
+	"cron" : "*",
+	"mocha" : "*"
+    },
+    "devDependencies":{
+        "mocha":"*",
+        "zombie":"*",
+        "jsdom":"*"
+    },
+    "scripts":{
+        "test":"mocha tests/*.js -t 10000",
+        "start":"node app.js"
+    }
+}

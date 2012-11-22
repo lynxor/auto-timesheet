@@ -1,0 +1,11 @@
+*~
+*#
+.#
+*.sublime-project
+*.sublime-workspace
+*.log
+.idea
+node_modules
+.#*
+incoming
+config.js
