@@ -28,7 +28,7 @@ function weekEntries(week) {
         return {
             date:moment(week).day(day),
             hours:8,
-            description:"Invest web dev"
+            description:"Wrote some crappy code"
         }
     });
 }
