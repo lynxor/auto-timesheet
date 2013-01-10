@@ -43,7 +43,7 @@ function leaveDay(date, hours) {
 function normalDay(date, hours) {
     return {
         date:date,
-        hours:8,
+        hours:hours,
         description:"Invest web",
         billable:true,
         project:"149",
@@ -113,7 +113,7 @@ function addEntry(entry, callback) {
     browser.evaluate("document.getElementById('EntryDate_TextBox').onchange();");
     browser.wait(function () {
         console.log("updated field(s). waiting ... ");
-        browser.select('Category_DropDown', entry.category);  //Software Development - have to wait - it cascades from project dropdown
+        browser.select('Category_DropDown', entry.category);  //Have to wait - it cascades from project dropdown
         browser.wait(function () {
             console.log("pressing insert...");
             browser.pressButton('Insert', function () {
@@ -166,10 +166,13 @@ if (args.length > 2 && args[2] === "--dry-run") {
 
         rl.question("Leave (l) or Normal (n) ?", function(type){
             rl.question("hours : ", function(hours){
+                var fhours = parseFloat(hours);
+               if(_.isNaN(fhours)){ fhours = 8; }
+
                  if(type === "l"){
-                     entries.push( leaveDay(date, parseFloat(hours)) );
-                 } else if(type === "n"){
-                     entries.push( normalDay(date, parseFloat(hours)) );
+                     entries.push( leaveDay(date, fhours) );
+                 } else if(type === "n" || type === "" || type === "\n"){
+                     entries.push( normalDay(date, fhours) );
                  } else {
                      console.log( "Invalid type of day" );
                  }
