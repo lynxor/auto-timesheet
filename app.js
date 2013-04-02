@@ -196,9 +196,10 @@ if (args.length > 2 && args[2] === "--dry-run") {
         });
     });
 
+} else{
+	
+	start(config.username, config.password, entries);
 }
-
-//start(config.username, config.password, entries);
 
 
 
